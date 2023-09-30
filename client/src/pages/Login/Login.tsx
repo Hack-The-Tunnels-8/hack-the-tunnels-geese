@@ -5,18 +5,25 @@ import { useAccountContext } from "../../context";
 import "./Login.style.scss";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
   const [message, setMessage] = useState(null);
   const { loggedIn, login } = useAccountContext();
   const navigate = useNavigate();
 
   const attemptLogin = async () => {
     try {
-      const message = await login("admin@email.com", "password");
+      const message = await login(email, password);
       setMessage(message);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    attemptLogin();
+  }
 
   useEffect(() => {
     if (loggedIn() === true) {
@@ -28,10 +35,25 @@ function Login() {
     <Page>
       <div className="login-page">
         <h1>Login</h1>
-        <button onClick={() => attemptLogin()}>
-          Login (as user set in code)
-        </button>
-        {message && <p>{message}</p>}
+        <form onSubmit={handleSubmit}>
+
+          <label htmlFor="name">Email:</label>
+          <input type="text" id="Email" name="Email"
+            onChange={(e) => setEmail(e.target.value)} // Update email state
+            required
+          />
+
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" name="password"
+            onChange={(e) => setEmail(e.target.value)} // Update email state
+            required
+          />
+
+          <button onClick={() => attemptLogin()}>
+            Login
+          </button>
+          {message && <p>{message}</p>}
+        </form>
       </div>
     </Page>
   );
