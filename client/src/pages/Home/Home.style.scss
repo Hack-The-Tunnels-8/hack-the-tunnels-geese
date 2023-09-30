@@ -13,9 +13,11 @@
     animation-iteration-count: 10;
   }
 
+
   &__products {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30%;
 
     a {
       text-decoration: none;
