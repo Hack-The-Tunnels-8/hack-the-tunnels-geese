@@ -10,18 +10,32 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar__logo">
-        <Link to="/">Store Logo</Link>
+        <img src="https://www.gooseinsurance.com/wp-content/uploads/2020/07/Goose-Logo_Black_Home@3x.png" alt="Goose Logo" width="100" height="50"></img>
       </div>
       <div className="navbar__account">
-        {loggedIn() === false ? (
-          <>
-            <button onClick={() => navigate("/sign-up")}>Sign Up</button>
-            <button onClick={() => navigate("/login")}>Login</button>
-          </>
-        ) : (
-          <button onClick={() => logout()}>Logout</button>
-        )}
+      <div className="button-container">
+          {loggedIn() === false ? (
+            <>
+              <button
+                className="sign-up-button"
+                onClick={() => navigate("/sign-up")}
+              >
+                Sign Up
+              </button>
+              <button
+                className="login-button"
+                onClick={() => navigate("/login")}
+              >
+                Login
+              </button>
+            </>
+          ) : (
+            <button className="logout-button" onClick={() => logout()}>
+              Logout
+            </button>
+          )}
       </div>
+    </div>
     </div>
   );
 }
