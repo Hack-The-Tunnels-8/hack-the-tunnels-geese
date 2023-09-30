@@ -1,6 +1,16 @@
 .home-page {
+  @keyframes colour_change {
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    100% {color: green;}
+  }
+
   &__title {
     color: red;
+    animation-name: colour_change;
+    animation-duration: 4s;
+    animation-iteration-count: 10;
   }
 
   &__products {
