@@ -9,21 +9,39 @@ const seed = async () => {
   const user = await AccountService.create("user@email.com", "password");
 
   const exampleProduct = await ProductService.create(
-    "Example Product #1",
-    "This is an example product",
-    10.99,
+    "Single White Goose",
+    "Very Friendly Goose",
+    1,
   );
 
   const exampleProduct2 = await ProductService.create(
-    "Example Product #2",
-    "This is an example product",
-    10.99,
+    "Flying Goose",
+    "This Goose can take you places",
+    12.99,
   );
 
   const exampleProduct3 = await ProductService.create(
-    "Example Product #3",
-    "This is an example product",
-    10.99,
+    "River Goose",
+    "He lives in a river",
+    88.99,
+  );
+
+  const exampleProduct4 = await ProductService.create(
+    "Henry",
+    "Watch out for henry",
+    34.99,
+  );
+
+  const exampleProduct5 = await ProductService.create(
+    "Bonked White Goose",
+    "This one is a fighter",
+    74.99,
+  );
+
+  const exampleProduct6 = await ProductService.create(
+    "Bulk White Geese",
+    "Why would you buy these?",
+    345.99,
   );
 };
 

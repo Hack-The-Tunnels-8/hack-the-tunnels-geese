@@ -17,7 +17,9 @@
   &__products {
     display: flex;
     flex-wrap: wrap;
-    gap: 20%;
+    gap: 15%;
+    padding-left: 100px;
+    row-gap: 20px;
 
     a {
       text-decoration: none;
