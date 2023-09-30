@@ -13,7 +13,7 @@ function Login() {
 
   const attemptLogin = async () => {
     try {
-      const message = await login("admin@email.com", "password");
+      const message = await login(email, password);
       setMessage(message);
     } catch (error) {
       console.log(error);
